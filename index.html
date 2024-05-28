@@ -3,84 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Math Solver</title>
+    <title>Gauth AI Homework Helper</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f6f7fb;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-        }
-        .container {
             text-align: center;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
         }
-        h1 {
-            margin-bottom: 20px;
-            color: #333;
-        }
-        form {
+        .header {
+            background-color: white;
+            padding: 10px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
         }
-        textarea, input[type="file"], button {
-            margin-bottom: 20px;
+        .header img {
+            height: 40px;
+        }
+        .header input {
             padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 100%;
-            max-width: 400px;
-            box-sizing: border-box;
-            font-size: 16px;
+            border-radius: 20px;
+            border: 1px solid #ddd;
+            width: 300px;
         }
-        button {
-            background-color: #4CAF50;
+        .header .right-menu {
+            display: flex;
+            align-items: center;
+        }
+        .header .right-menu img {
+            height: 20px;
+            margin-right: 20px;
+        }
+        .header .login {
+            padding: 10px 20px;
+            background-color: #000;
             color: white;
+            border-radius: 20px;
+            text-decoration: none;
+        }
+        .main-content {
+            padding: 50px 20px;
+        }
+        .main-content h1 {
+            color: #ff5a5a;
+        }
+        .main-content p {
+            color: #888;
+        }
+        .search-box {
+            margin-top: 30px;
+        }
+        .search-box input[type="text"] {
+            padding: 15px;
+            width: 400px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .search-box button {
+            padding: 15px 30px;
             border: none;
+            background-color: #ff5a5a;
+            color: white;
+            border-radius: 20px;
             cursor: pointer;
-            transition: background-color 0.3s;
         }
-        button:hover {
-            background-color: #45a049;
+        .upload-box {
+            margin-top: 50px;
+            padding: 50px;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            background-color: white;
+            display: inline-block;
         }
-        #imagePreview {
-            max-width: 100%;
-            max-height: 300px;
-            display: none;
-            margin-bottom: 20px;
-        }
-        #result {
-            font-weight: bold;
-            color: #333;
+        .upload-box p {
+            margin: 0;
+            color: #888;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>AI Math Solver</h1>
-        <form id="mathForm">
-            <textarea id="mathInput" name="mathInput" rows="4" cols="50" placeholder="Enter your math problem here"></textarea>
-            <input type="file" id="imageInput" name="imageInput" accept="image/*" onchange="previewImage(event)">
-            <img id="imagePreview" src="#" alt="Preview">
-            <button type="submit">Solve</button>
-        </form>
-        <div id="result"></div>
+    <div class="header">
+        <img src="https://i.imgur.com/6QzSVQj.png" alt="Gauth Logo">
+        <input type="text" placeholder="Type or upload your question">
+        <div class="right-menu">
+            <img src="https://i.imgur.com/IWaiT6s.png" alt="Instagram">
+            <a href="#" class="login">Log in</a>
+        </div>
     </div>
 
-    <script>
-        function previewImage(event) {
-            var image = document.getElementById('imagePreview');
-            image.style.display = "block";
-            image.src = URL.createObjectURL(event.target.files[0]);
-        }
-    </script>
+    <div class="main-content">
+        <h1>Your AI Homework Helper</h1>
+        <h2>Gauth it, Ace it!</h2>
+        <p>Study smarter with AI & Live Experts</p>
+
+        <div class="search-box">
+            <input type="text" placeholder="Upload your question for step-by-step solutions">
+            <button>Search</button>
+        </div>
+
+        <div class="upload-box">
+            <img src="https://i.imgur.com/yVsSnn8.png" alt="Upload">
+            <p>Drop image or <a href="#">Click Here</a> to upload</p>
+            <p><small>Ctrl + V to paste</small></p>
+        </div>
+    </div>
 </body>
 </html>
