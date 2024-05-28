@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Math Solver</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            text-align: center;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AI Math Solver</h1>
+        <form id="mathForm">
+            <textarea id="mathInput" rows="4" cols="50" placeholder="Enter your math problem here"></textarea><br>
+            <input type="file" id="imageInput" accept="image/*" onchange="previewImage(event)"><br>
+            <img id="imagePreview" src="#" alt="Preview" style="max-width: 300px; max-height: 300px; display: none;"><br>
+            <button type="button" onclick="solveMath()">Solve</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function previewImage(event) {
+            var image = document.getElementById('imagePreview');
+            image.style.display = "block";
+            image.src = URL.createObjectURL(event.target.files[0]);
+        }
+
+        function solveMath() {
+            var mathInput = document.getElementById('mathInput').value;
+            var imageInput = document.getElementById('imageInput').files[0];
+
+            
+        
+            var formData = new FormData();
+            formData.append('mathInput', mathInput);
+            formData.append('imageInput', imageInput);
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'backend-url', true);
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    document.getElementById('result').innerText = xhr.responseText;
+                } else {
+                    console.error('Error:', xhr.statusText);
+                }
+            };
+            xhr.send(formData);
+            */
+
+      
+            document.getElementById('result').innerText = "Math Problem: " + mathInput;
+        }
+    </script>
+</body>
+</html>
